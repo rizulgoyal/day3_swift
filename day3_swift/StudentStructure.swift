@@ -16,7 +16,13 @@ struct Student {
     var total: Float
     var result: String
     
-   
+   func totalmarks()
+   {
+    for i in marks
+    {
+            self.total += marks
+    }
+    
     func printData()
     {
         print(studentID)
