@@ -8,34 +8,47 @@
 
 import Foundation
 
-print("Hello, World!")
 
-var a:Int! = nil
-a=10
-print(a!)
-var b=100
 
-var d=a+b
-if a==nil
+
+
+
+var f4 = Faculty(facultyID: 4, facultyFirstName: "Pritesh", facultyLastName: "Patel", basicSalary: 251.01, bonus: 652.2)
+
+var f3 = Faculty(facultyID: 3, facultyFirstName: "Rizul", facultyLastName: "Goyal", basicSalary: 251.0, bonus: 100.3)
+
+var f2 = Faculty(facultyID: 2, facultyFirstName: "Anmol", facultyLastName: "Sharma", basicSalary: 652.8, bonus: 152.0)
+
+
+var f1 = Faculty(facultyID: 1, facultyFirstName: "harpreet", facultyLastName: "Singh", basicSalary: 985.5, bonus: 155.6)
+f1.totalsalarycommision=10
+
+var faculties = Dictionary<Int, Faculty>()
+faculties.updateValue(f1, forKey: f1.facultyID!)
+faculties.updateValue(f2, forKey: f2.facultyID!)
+faculties.updateValue(f3, forKey: f3.facultyID!)
+faculties.updateValue(f4, forKey: f4.facultyID!)
+
+for i in faculties
 {
-    print ("a is nil")
-}
-else{
-    //let c=(a ?? 0)+b
-    let c=a!+b
-
-    print(c)
-
+    
+    i.value.printData()
+    print("-------------------")
 }
 
-var s1 = Student(studentID: 3, studentName: "Anmol")
+
+
+
+
+
+
+print("------------------------ Student ")
+var s1 = Student(studentId: 2, studentName: "Rizul Goyal", marks: ["Marks1":25,"Marks2":50,"Marks3":65,"Marks4":58,"Marks5":94,]
+                 )
+s1.totalmarks()
+s1.calcresult()
 s1.printData()
 
 
 
-var f4 = Faculty(facultyID: 2, facultyFirstName: "Rizul", facultyLastName: "Goyal", basicSalary: 254.2, bonus: 651.2)
-f4.calculateSalary()
-f4.printData()
 
-var s1 = Student(studentID: 2, studentName: "Rizul Goyal", marks: ["Marks1":25,"Marks2":50,"Marks3":65,"Marks4":58,"Marks5":94,],
-                 percentage: <#T##Float#>, total: <#T##Float#>, result: <#T##String#>)

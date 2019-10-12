@@ -13,24 +13,62 @@ struct Student {
     var studentName: String
     var marks:[String: Float]
     var percentage: Float
-    var total: Float
     var result: String
+    var total: Float
+
     
-   func totalmarks()
-   {
-    for i in marks
-    {
-            self.total += marks
+    init(studentId: Int, studentName: String, marks:[String:Float]) {
+        
+        self.studentID=studentId
+        self.studentName=studentName
+        self.marks=marks
+        self.percentage = 0.0
+        self.total = 0.0
+        self.result=""
+        
     }
+    
+    mutating func totalmarks()
+   {
+
+    for i in marks.values
+    {
+
+       self.total += i
+    
+    }
+    self.percentage = self.total/5*100
+
+    }
+    
+    mutating func calcresult()
+    {
+        if(self.percentage>50)
+        {
+            result="You are Pass"
+        }
+        else{
+            result = "You are fail"
+        }
+    }
+    
+    
+    
+    
+   
+    
+    
+    
     
     func printData()
     {
-        print(studentID)
-        print(studentName)
-        print(marks)
-        print(total)
-        print(percentage)
-        print(result)
+        print("Student ID is : \(self.studentID)")
+        print("Student name is : \(self.studentName)")
+        print("Student Marks are : \(self.marks)")
+        print("Total Marks are \(self.total)")
+        print("Percentage is \(self.percentage)")
+        print("Result is \(self.result)")
+       
     }
 }
 
